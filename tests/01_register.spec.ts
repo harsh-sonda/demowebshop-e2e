@@ -5,6 +5,7 @@ import { saveRegisteredUser } from "../support/utils/misc/credentialStore";
 import registerData from "../support/testData/registerData.json";
 
 test.describe("Register Test Cases", () => {
+  
   test.beforeEach(async ({ page }) => {
     const registerPage = new RegisterPage(page);
     await registerPage.verifyRegisterPageElements();
