@@ -69,8 +69,10 @@ export class RegisterPage {
   ): Promise<RegisterUserResult> {
     await this.page.goto("/register");
 
-    const userEmail = email ?? generateRandomEmail();
-    const userPassword = password ?? registerData.password;
+    const userEmail =
+      email ?? process.env.REGISTER_EMAIL ?? generateRandomEmail();
+    const userPassword =
+      password ?? process.env.REGISTER_PASSWORD ?? registerData.password;
     const userFirstName = firstName ?? generateRandomName("First");
     const userLastName = lastName ?? generateRandomName("Last");
     const gender = registerData.gender;
@@ -118,3 +120,4 @@ export class RegisterPage {
     await expect(this.successMessage).not.toBeVisible();
   }
 }
+

@@ -5,7 +5,6 @@ import {
   inputField,
   visibilityOfElement,
 } from "../utils/misc/generalPlaywrightMethod";
-import loginData from "../testData/loginData.json";
 import projects from "../testData/projects.json";
 import { loadRegisteredUser } from "../utils/misc/credentialStore";
 
@@ -48,15 +47,9 @@ export class LoginPage {
 
     return {
       email:
-        email ??
-        process.env.REGISTER_EMAIL ??
-        storedUser?.email ??
-        loginData.email,
+        email ?? process.env.REGISTER_EMAIL ?? storedUser?.email ?? "",
       password:
-        password ??
-        process.env.REGISTER_PASSWORD ??
-        storedUser?.password ??
-        loginData.password,
+        password ?? process.env.REGISTER_PASSWORD ?? storedUser?.password ?? "",
     };
   }
 
@@ -102,3 +95,4 @@ export class LoginPage {
     }
   }
 }
+

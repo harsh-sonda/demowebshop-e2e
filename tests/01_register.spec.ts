@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { RegisterPage } from "../support/PageMethod/register";
+import { RegisterPage } from "../support/pageMethod/register";
 import { generateRandomEmail } from "../support/utils/misc/helper";
 import { saveRegisteredUser } from "../support/utils/misc/credentialStore";
 import registerData from "../support/testData/registerData.json";
@@ -17,6 +17,6 @@ test.describe("Register Test Cases", () => {
       registerData.password
     );
 
-    saveRegisteredUser(user);
+saveRegisteredUser(user);
   });
 });
