@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Ensure BASE_URL is present or fall back to a sensible default and warn
-const baseURL = process.env.BASE_URL ?? "https://demowebshop.tricentis.com";
+const baseURL = process.env.BASE_URL;
 if (!process.env.BASE_URL) {
   // eslint-disable-next-line no-console
   console.warn(

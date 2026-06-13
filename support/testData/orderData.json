@@ -1,0 +1,31 @@
+{
+  "product": {
+    "categoryName": "Books",
+    "name": "Computing and Internet"
+  },
+  "billingAddress": {
+    "firstName": "Test",
+    "lastName": "User",
+    "company": "Tricentis QA",
+    "countryValue": "41",
+    "countryName": "India",
+    "city": "Bengaluru",
+    "address1": "123 Test Street",
+    "address2": "",
+    "zipPostalCode": "560001",
+    "phoneNumber": "9999999999",
+    "faxNumber": ""
+  },
+  "shippingMethod": "Ground",
+  "shippingMethods": ["Ground", "Next Day Air", "2nd Day Air"],
+  "payment": {
+    "method": "Credit Card",
+    "creditCardType": "Visa",
+    "cardholderName": "Test User",
+    "cardNumber": "4111111111111111",
+    "expireMonth": "1",
+    "expireYear": "2027",
+    "cardCode": "123"
+  },
+  "paymentMethods": ["Cash On Delivery", "Check / Money Order"]
+}

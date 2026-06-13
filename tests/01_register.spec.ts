@@ -1,23 +1,28 @@
 import { test } from "@playwright/test";
 import { RegisterPage } from "../support/pageMethods/register";
-import { generateRandomEmail } from "../support/utils/helper";
-import { saveRegisteredUser } from "../support/utils/credentialStore";
-import registerData from "../support/testData/registerData.json";
 
 test.describe("Register Test Cases", () => {
-
   test.beforeEach(async ({ page }) => {
-    const registerPage = new RegisterPage(page);
-    await registerPage.verifyRegisterPageElements();
+    await page.goto("/");
   });
 
   test("Register a new user with valid data", async ({ page }) => {
-    const registerPage = new RegisterPage(page);
-    const user = await registerPage.registerNewUser(
-      generateRandomEmail(),
-      registerData.password
-    );
+    await new RegisterPage(page).registerNewUserWithValidData();
+  });
 
-saveRegisteredUser(user);
+  test("Register shows required field validation", async ({ page }) => {
+    await new RegisterPage(page).registerWithRequiredFieldsMissing();
+  });
+
+  test("Register fails with invalid email", async ({ page }) => {
+    await new RegisterPage(page).registerWithInvalidEmail();
+  });
+
+  test("Register fails when passwords do not match", async ({ page }) => {
+    await new RegisterPage(page).registerWithPasswordMismatch();
+  });
+
+  test("Register fails with duplicate email", async ({ page }) => {
+    await new RegisterPage(page).registerWithDuplicateEmail();
   });
 });

@@ -1,35 +1,36 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "../support/pageMethods/login";
-import { RegisterPage } from "../support/pageMethods/register";
-import registerData from "../support/testData/registerData.json";
-import { generateRandomEmail } from "../support/utils/helper";
 
 test.describe("Login Test Cases", () => {
   test.beforeEach(async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.verifyLoginPageElements();
-    await loginPage.logout();
+    await page.goto("/");
   });
 
   test("Login with valid credentials", async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    const registerPage = new RegisterPage(page);
-
-    const credentials = await registerPage.registerNewUser(
-      generateRandomEmail(),
-      registerData.password
-    );
-
-    await loginPage.logout();
-    await loginPage.page.goto("/login");
-    await loginPage.loginIntoApplication(
-      credentials.email,
-      credentials.password
-    );
+    await new LoginPage(page).loginWithValidCredentials();
   });
 
   test("Login fails with invalid password", async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.verifyInvalidLogin("bad@example.com", "wrong");
+    await new LoginPage(page).loginWithInvalidPassword();
+  });
+
+  test("Login fails with empty credentials", async ({ page }) => {
+    await new LoginPage(page).loginWithEmptyCredentials();
+  });
+
+  test("Login fails with invalid email format", async ({ page }) => {
+    await new LoginPage(page).loginWithInvalidEmailFormat();
+  });
+
+  test("User can log out after login", async ({ page }) => {
+    await new LoginPage(page).loginThenLogout();
+  });
+
+  test("Recover password for registered user", async ({ page }) => {
+    await new LoginPage(page).recoverPasswordForRegisteredUser();
+  });
+
+  test("Password recovery requires email", async ({ page }) => {
+    await new LoginPage(page).verifyPasswordRecoveryRequiresEmail();
   });
 });

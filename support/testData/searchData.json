@@ -1,0 +1,21 @@
+{
+  "headerSearch": {
+    "keyword": "computer",
+    "expectedProduct": "Build your own computer"
+  },
+  "noResults": {
+    "keyword": "no-product-should-match-this-search"
+  },
+  "advanced": {
+    "keyword": "camcorder",
+    "category": "Electronics",
+    "priceFrom": "400",
+    "priceTo": "600",
+    "expectedProduct": "Camcorder"
+  },
+  "descriptionSearch": {
+    "keyword": "TCP",
+    "category": "Computers >> Accessories",
+    "expectedProduct": "TCP Coaching day"
+  }
+}

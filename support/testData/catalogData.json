@@ -1,0 +1,45 @@
+{
+  "categories": [
+    { "name": "Books", "path": "/books", "expectedProduct": "Computing and Internet" },
+    { "name": "Computers", "path": "/computers", "expectedSubcategory": "Desktops" },
+    { "name": "Electronics", "path": "/electronics", "expectedSubcategory": "Camera, photo" },
+    { "name": "Apparel & Shoes", "path": "/apparel-shoes", "expectedProduct": "Blue Jeans" },
+    { "name": "Digital downloads", "path": "/digital-downloads", "expectedProduct": "3rd Album" },
+    { "name": "Jewelry", "path": "/jewelry", "expectedProduct": "Black & White Diamond Heart" },
+    { "name": "Gift Cards", "path": "/gift-cards", "expectedProduct": "$25 Virtual Gift Card" }
+  ],
+  "subcategories": [
+    { "name": "Desktops", "path": "/desktops", "expectedProduct": "Build your own computer" },
+    { "name": "Notebooks", "path": "/notebooks", "expectedProduct": "14.1-inch Laptop" },
+    { "name": "Accessories", "path": "/accessories", "expectedProduct": "TCP Coaching day" },
+    { "name": "Camera, photo", "path": "/camera-photo", "expectedProduct": "Digital SLR Camera 12.2 Mpixel" },
+    { "name": "Cell phones", "path": "/cell-phones", "expectedProduct": "Smartphone" }
+  ],
+  "bookProduct": {
+    "categoryName": "Books",
+    "name": "Computing and Internet",
+    "path": "/computing-and-internet",
+    "price": "10.00"
+  },
+  "computerProduct": {
+    "name": "Build your own computer",
+    "path": "/build-your-own-computer",
+    "processor": "2.5 GHz Intel Pentium Dual-Core E2200",
+    "ram": "4GB",
+    "hdd": "400 GB",
+    "os": "Windows 10",
+    "software": ["Acrobat Reader", "Total Commander"]
+  },
+  "giftCardProduct": {
+    "name": "$25 Virtual Gift Card",
+    "path": "/25-virtual-gift-card",
+    "recipientName": "Gift Recipient",
+    "recipientEmail": "recipient@example.com",
+    "senderName": "Gift Sender",
+    "message": "Happy testing!"
+  },
+  "compareProducts": [
+    { "name": "Computing and Internet", "path": "/computing-and-internet" },
+    { "name": "Fiction", "path": "/fiction" }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "customer": {
+    "firstName": "UpdatedFirst",
+    "lastName": "UpdatedLast",
+    "gender": "Female"
+  },
+  "address": {
+    "firstName": "Address",
+    "lastName": "User",
+    "email": "address.user@example.com",
+    "company": "Tricentis QA",
+    "countryValue": "41",
+    "city": "Bengaluru",
+    "address1": "456 Account Street",
+    "address2": "Suite 10",
+    "zipPostalCode": "560002",
+    "phoneNumber": "8888888888",
+    "faxNumber": ""
+  },
+  "editedAddress": {
+    "city": "Mysuru",
+    "address1": "789 Edited Street",
+    "zipPostalCode": "570001",
+    "phoneNumber": "7777777777"
+  }
+}

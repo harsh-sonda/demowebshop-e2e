@@ -2,11 +2,80 @@
   "register": {
     "pageTitle": "Register",
     "successMessage": "Your registration completed",
-    "passwordMismatchMessage": "The password and confirmation password do not match."
+    "passwordMismatchMessage": "The password and confirmation password do not match.",
+    "invalidEmailMessage": "Wrong email",
+    "duplicateEmailMessage": "The specified email already exists",
+    "requiredFieldMessages": [
+      "First name is required.",
+      "Last name is required.",
+      "Email is required.",
+      "Password is required."
+    ]
   },
   "login": {
     "pageTitle": "Welcome, Please Sign In!",
     "accountLinkText": "My account",
     "invalidLoginMessage": "Login was unsuccessful. Please correct the errors and try again."
+  },
+  "passwordRecovery": {
+    "pageTitle": "Password recovery",
+    "successMessage": "Email with instructions has been sent to you.",
+    "emailNotFoundMessage": "Email not found.",
+    "emailRequiredMessage": "Enter your email"
+  },
+  "cart": {
+    "emptyCartMessage": "Your Shopping Cart is empty!",
+    "termsOfServiceMessage": "Please accept the terms of service before the next step."
+  },
+  "order": {
+    "cartPageTitle": "Shopping cart",
+    "checkoutPageTitle": "Checkout",
+    "orderSuccessMessage": "Your order has been successfully processed!",
+    "billingRequiredMessage": "First name is required.",
+    "paymentValidationMessage": "Wrong card number"
+  },
+  "catalog": {
+    "gridView": "Grid",
+    "listView": "List"
+  },
+  "search": {
+    "pageTitle": "Search",
+    "noResultsMessage": "No products were found that matched your criteria."
+  },
+  "wishlist": {
+    "pageTitle": "Wishlist",
+    "successMessage": "The product has been added to your wishlist",
+    "emptyMessage": "The wishlist is empty!"
+  },
+  "compare": {
+    "pageTitle": "Compare products",
+    "successMessage": "The product has been added to your product comparison",
+    "emptyMessage": "You have no items to compare."
+  },
+  "account": {
+    "customerInfoTitle": "My account - Customer info",
+    "addressesTitle": "My account - Addresses",
+    "ordersTitle": "My account - Orders",
+    "customerInfoSuccessMessage": "The customer info has been updated successfully."
+  },
+  "address": {
+    "successMessage": "The new address has been added successfully.",
+    "updateMessage": "The address has been updated successfully.",
+    "deleteMessage": "The address has been deleted successfully."
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "successMessage": "Your enquiry has been successfully sent to the store owner."
+  },
+  "newsletter": {
+    "successMessage": "Thank you for signing up! A verification email has been sent. We appreciate your interest.",
+    "invalidEmailMessage": "Enter valid email"
+  },
+  "poll": {
+    "question": "Do you like nopCommerce?"
+  },
+  "review": {
+    "titleRequiredMessage": "Review title is required.",
+    "textRequiredMessage": "Review text is required."
   }
 }

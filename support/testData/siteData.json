@@ -1,0 +1,24 @@
+{
+  "contact": {
+    "fullName": "Demo Tester",
+    "email": "demo.tester@example.com",
+    "enquiry": "Please confirm this enquiry was received."
+  },
+  "newsletter": {
+    "validEmail": "newsletter.tester@example.com",
+    "invalidEmail": "not-an-email"
+  },
+  "review": {
+    "productName": "Computing and Internet",
+    "title": "Useful test review",
+    "text": "This product review was created by an automated end-to-end test.",
+    "rating": "4"
+  },
+  "contentLinks": [
+    { "name": "Sitemap", "path": "/sitemap", "heading": "Sitemap" },
+    { "name": "Shipping & Returns", "path": "/shipping-returns", "heading": "Shipping & Returns" },
+    { "name": "Privacy Notice", "path": "/privacy-policy", "heading": "Privacy policy" },
+    { "name": "Conditions of Use", "path": "/conditions-of-use", "heading": "Conditions of Use" },
+    { "name": "About us", "path": "/about-us", "heading": "About us" }
+  ]
+}

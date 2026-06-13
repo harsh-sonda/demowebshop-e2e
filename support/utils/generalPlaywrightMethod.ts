@@ -28,10 +28,6 @@ export async function assertPageUrl(
   await expect(page).toHaveURL(expectedUrl);
 }
 
-export async function goToPage(page: Page, path: string): Promise<void> {
-  await page.goto(path);
-}
-
 export function generateRandomEmail(): string {
   const timestamp = Date.now();
   const random = Math.floor(Math.random() * 10000);
