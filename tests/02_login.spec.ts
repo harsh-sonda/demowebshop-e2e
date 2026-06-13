@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
-import { LoginPage } from "../support/pageMethod/login";
-import { RegisterPage } from "../support/pageMethod/register";
+import { LoginPage } from "../support/pageMethods/login";
+import { RegisterPage } from "../support/pageMethods/register";
 import registerData from "../support/testData/registerData.json";
 import { generateRandomEmail } from "../support/utils/helper";
 

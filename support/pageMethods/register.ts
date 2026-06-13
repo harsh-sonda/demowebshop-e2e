@@ -9,7 +9,7 @@ import {
 } from "../utils/generalPlaywrightMethod";
 import registerData from "../testData/registerData.json";
 import projects from "../testData/projects.json";
-import { RegisteredUser } from "../utils/misc/credentialStore";
+import { RegisteredUser } from "../utils/credentialStore";
 
 export type RegisterUserResult = Pick<
   RegisteredUser,

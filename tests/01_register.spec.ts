@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import { RegisterPage } from "../support/pageMethod/register";
+import { RegisterPage } from "../support/pageMethods/register";
 import { generateRandomEmail } from "../support/utils/helper";
 import { saveRegisteredUser } from "../support/utils/credentialStore";
 import registerData from "../support/testData/registerData.json";

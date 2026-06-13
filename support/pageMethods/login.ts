@@ -6,7 +6,7 @@ import {
   visibilityOfElement,
 } from "../utils/generalPlaywrightMethod";
 import projects from "../testData/projects.json";
-import { loadRegisteredUser } from "../utils/misc/credentialStore";
+import { loadRegisteredUser } from "../utils/credentialStore";
 
 export class LoginPage {
   readonly page: Page;
