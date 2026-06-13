@@ -2,7 +2,7 @@ import { test } from "@playwright/test";
 import { LoginPage } from "../support/pageMethod/login";
 import { RegisterPage } from "../support/pageMethod/register";
 import registerData from "../support/testData/registerData.json";
-import { generateRandomEmail } from "../support/utils/misc/helper";
+import { generateRandomEmail } from "../support/utils/helper";
 
 test.describe("Login Test Cases", () => {
   test.beforeEach(async ({ page }) => {

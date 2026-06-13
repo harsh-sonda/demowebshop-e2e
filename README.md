@@ -10,7 +10,10 @@ End-to-end test automation for [Demo Web Shop](https://demowebshop.tricentis.com
 │   ├── 01_register.spec.ts
 │   └── 02_login.spec.ts
 └── support/
-    ├── PageMethod/login.ts, register.ts
+    ├── Fixture/pageObjects.ts
+    ├── pageMethod/
+    │   ├── login.ts
+    │   └── register.ts
     ├── testData/*.json
     └── utils/misc/
 ```
