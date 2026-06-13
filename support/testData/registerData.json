@@ -1,0 +1,6 @@
+{
+  "gender": "Male",
+  "dateOfBirth": { "day": "15", "month": "March", "year": "1990" },
+  "companyName": "Tricentis QA",
+  "password": "Test@1234"
+}

@@ -1,0 +1,12 @@
+node_modules/
+.cursor/
+.env
+playwright-report/
+test-results/
+support/testData/registeredUser.json
+
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

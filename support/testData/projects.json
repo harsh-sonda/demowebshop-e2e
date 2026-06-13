@@ -1,0 +1,12 @@
+{
+  "register": {
+    "pageTitle": "Register",
+    "successMessage": "Your registration completed",
+    "passwordMismatchMessage": "The password and confirmation password do not match."
+  },
+  "login": {
+    "pageTitle": "Welcome, Please Sign In!",
+    "accountLinkText": "My account",
+    "invalidLoginMessage": "Login was unsuccessful. Please correct the errors and try again."
+  }
+}
