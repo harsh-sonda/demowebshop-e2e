@@ -6,7 +6,7 @@ import {
   generateRandomName,
   inputField,
   visibilityOfElement,
-} from "../utils/misc/generalPlaywrightMethod";
+} from "../utils/generalPlaywrightMethod";
 import registerData from "../testData/registerData.json";
 import projects from "../testData/projects.json";
 import { RegisteredUser } from "../utils/misc/credentialStore";

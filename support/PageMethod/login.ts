@@ -4,7 +4,7 @@ import {
   clickWebElement,
   inputField,
   visibilityOfElement,
-} from "../utils/misc/generalPlaywrightMethod";
+} from "../utils/generalPlaywrightMethod";
 import projects from "../testData/projects.json";
 import { loadRegisteredUser } from "../utils/misc/credentialStore";
 
