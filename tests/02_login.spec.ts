@@ -2,35 +2,38 @@ import { test } from "@playwright/test";
 import { LoginPage } from "../support/pageMethods/login";
 
 test.describe("Login Test Cases", () => {
+  let loginPage: LoginPage;
+
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    loginPage = new LoginPage(page);
   });
 
-  test("Login with valid credentials", async ({ page }) => {
-    await new LoginPage(page).loginWithValidCredentials();
+  test("Login with valid credentials", async () => {
+    await loginPage.loginWithValidCredentials();
   });
 
-  test("Login fails with invalid password", async ({ page }) => {
-    await new LoginPage(page).loginWithInvalidPassword();
+  test("Login fails with invalid password", async () => {
+    await loginPage.loginWithInvalidPassword();
   });
 
-  test("Login fails with empty credentials", async ({ page }) => {
-    await new LoginPage(page).loginWithEmptyCredentials();
+  test("Login fails with empty credentials", async () => {
+    await loginPage.loginWithEmptyCredentials();
   });
 
-  test("Login fails with invalid email format", async ({ page }) => {
-    await new LoginPage(page).loginWithInvalidEmailFormat();
+  test("Login fails with invalid email format", async () => {
+    await loginPage.loginWithInvalidEmailFormat();
   });
 
-  test("User can log out after login", async ({ page }) => {
-    await new LoginPage(page).loginThenLogout();
+  test("User can log out after login", async () => {
+    await loginPage.loginThenLogout();
   });
 
-  test("Recover password for registered user", async ({ page }) => {
-    await new LoginPage(page).recoverPasswordForRegisteredUser();
+  test("Recover password for registered user", async () => {
+    await loginPage.recoverPasswordForRegisteredUser();
   });
 
-  test("Password recovery requires email", async ({ page }) => {
-    await new LoginPage(page).verifyPasswordRecoveryRequiresEmail();
+  test("Password recovery requires email", async () => {
+    await loginPage.verifyPasswordRecoveryRequiresEmail();
   });
 });

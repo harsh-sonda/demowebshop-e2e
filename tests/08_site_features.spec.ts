@@ -11,73 +11,82 @@ import siteData from "../support/testData/siteData.json";
 import { generateRandomEmail } from "../support/utils/helper";
 
 test.describe("Site Feature Test Cases", () => {
+  let contactPage: ContactPage;
+  let contentPage: ContentPage;
+  let newsletterPage: NewsletterPage;
+  let pollPage: PollPage;
+  let productPage: ProductPage;
+  let registerPage: RegisterPage;
+
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    contactPage = new ContactPage(page);
+    contentPage = new ContentPage(page);
+    newsletterPage = new NewsletterPage(page);
+    pollPage = new PollPage(page);
+    productPage = new ProductPage(page);
+    registerPage = new RegisterPage(page);
   });
 
-  test("Submit contact us form", async ({ page }) => {
-    await new ContactPage(page).submitContactForm(siteData.contact);
+  test("Submit contact us form", async () => {
+    await contactPage.submitContactForm(siteData.contact);
   });
 
-  test("Contact us form validates required fields", async ({ page }) => {
-    await new ContactPage(page).verifyRequiredFieldValidation();
+  test("Contact us form validates required fields", async () => {
+    await contactPage.verifyRequiredFieldValidation();
   });
 
-  test("Subscribe to newsletter with valid email", async ({ page }) => {
-    await new NewsletterPage(page).subscribeWithValidEmail(generateRandomEmail());
+  test("Subscribe to newsletter with valid email", async () => {
+    await newsletterPage.subscribeWithValidEmail(generateRandomEmail());
   });
 
-  test("Newsletter rejects invalid email", async ({ page }) => {
-    await new NewsletterPage(page).subscribeWithInvalidEmail(
+  test("Newsletter rejects invalid email", async () => {
+    await newsletterPage.subscribeWithInvalidEmail(
       siteData.newsletter.invalidEmail
     );
   });
 
-  test("Vote in community poll", async ({ page }) => {
-    await new RegisterPage(page).registerNewUser(
+  test("Vote in community poll", async () => {
+    await registerPage.registerNewUser(
       generateRandomEmail(),
       registerData.password
     );
-    await new PollPage(page).voteInCommunityPoll();
+    await pollPage.voteInCommunityPoll();
   });
 
-  test("Recently viewed products shows visited product", async ({ page }) => {
-    await new ContentPage(page).verifyRecentlyViewedProduct(
-      catalogData.bookProduct.name
-    );
+  test("Recently viewed products shows visited product", async () => {
+    await contentPage.verifyRecentlyViewedProduct(catalogData.bookProduct.name);
   });
 
-  test("New products page displays products", async ({ page }) => {
-    await new ContentPage(page).verifyNewProductsPage();
+  test("New products page displays products", async () => {
+    await contentPage.verifyNewProductsPage();
   });
 
-  test("Logged-in user can submit a product review", async ({ page }) => {
-    await new RegisterPage(page).registerNewUser(
+  test("Logged-in user can submit a product review", async () => {
+    await registerPage.registerNewUser(
       generateRandomEmail(),
       registerData.password
     );
-    await new ProductPage(page).submitReview(siteData.review);
+    await productPage.submitReview(siteData.review);
   });
 
-  test("Product review requires title", async ({ page }) => {
-    await new RegisterPage(page).registerNewUser(
+  test("Product review requires title", async () => {
+    await registerPage.registerNewUser(
       generateRandomEmail(),
       registerData.password
     );
-    await new ProductPage(page).verifyReviewRequiresTitle(siteData.review);
+    await productPage.verifyReviewRequiresTitle(siteData.review);
   });
 
-  test("Product review requires text", async ({ page }) => {
-    await new RegisterPage(page).registerNewUser(
+  test("Product review requires text", async () => {
+    await registerPage.registerNewUser(
       generateRandomEmail(),
       registerData.password
     );
-    await new ProductPage(page).verifyReviewRequiresText(siteData.review);
+    await productPage.verifyReviewRequiresText(siteData.review);
   });
 
-  test("Footer information links open expected pages", async ({ page }) => {
-    await new ContentPage(page).verifyFooterInformationLinks(
-      siteData.contentLinks
-    );
+  test("Footer information links open expected pages", async () => {
+    await contentPage.verifyFooterInformationLinks(siteData.contentLinks);
   });
 });

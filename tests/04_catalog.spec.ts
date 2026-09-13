@@ -4,47 +4,46 @@ import { ProductPage } from "../support/pageMethods/product";
 import catalogData from "../support/testData/catalogData.json";
 
 test.describe("Catalog Test Cases", () => {
+  let catalogPage: CatalogPage;
+  let productPage: ProductPage;
+
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    catalogPage = new CatalogPage(page);
+    productPage = new ProductPage(page);
   });
 
-  test("Browse main categories", async ({ page }) => {
-    const catalogPage = new CatalogPage(page);
-
+  test("Browse main categories", async () => {
     for (const category of catalogData.categories) {
       await catalogPage.verifyCategoryNavigation(category);
     }
   });
 
-  test("Browse selected subcategories", async ({ page }) => {
-    const catalogPage = new CatalogPage(page);
-
+  test("Browse selected subcategories", async () => {
     for (const category of catalogData.subcategories) {
       await catalogPage.verifySubcategoryNavigation(category);
     }
   });
 
-  test("Change catalog sort, view mode, and page size", async ({ page }) => {
-    await new CatalogPage(page).verifyListingControls();
+  test("Change catalog sort, view mode, and page size", async () => {
+    await catalogPage.verifyListingControls();
   });
 
-  test("Sort products by price", async ({ page }) => {
-    await new CatalogPage(page).verifyPriceSorting();
+  test("Sort products by price", async () => {
+    await catalogPage.verifyPriceSorting();
   });
 
-  test("Open product details", async ({ page }) => {
-    await new ProductPage(page).verifyProductDetails(catalogData.bookProduct);
+  test("Open product details", async () => {
+    await productPage.verifyProductDetails(catalogData.bookProduct);
   });
 
-  test("Configure computer product and add to cart", async ({ page }) => {
-    await new ProductPage(page).configureComputerAndAddToCart(
+  test("Configure computer product and add to cart", async () => {
+    await productPage.configureComputerAndAddToCart(
       catalogData.computerProduct
     );
   });
 
-  test("Fill virtual gift card fields and add to cart", async ({ page }) => {
-    await new ProductPage(page).fillGiftCardAndAddToCart(
-      catalogData.giftCardProduct
-    );
+  test("Fill virtual gift card fields and add to cart", async () => {
+    await productPage.fillGiftCardAndAddToCart(catalogData.giftCardProduct);
   });
 });
